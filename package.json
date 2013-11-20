@@ -1,6 +1,6 @@
 {
   "name": "put-json",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "wrapper for PUTting json with hyperquest",
   "main": "index.js",
   "scripts": {
