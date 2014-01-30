@@ -27,8 +27,10 @@ module.exports = function(url, data, cb) {
   });
 
   return ws.on('end', function() {
-    var res;
-    res = ws.response;
+    var res = ws.response;
+    if (res.statusCode >= 400) {
+      return cb(new Error('Bad statusCode in response: '+ res.statusCode), res);
+    }
     res.body = buffer;
     return cb(null, res);
   });
